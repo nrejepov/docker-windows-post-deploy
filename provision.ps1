@@ -33,8 +33,8 @@ function Disable-UserAccessControl {
 # Disable Windows Defender real-time monitoring
 Set-MpPreference -DisableRealtimeMonitoring $true
 
-# Disable Windows update installations
-Stop-Service -displayname "Windows Modules Installer"
+# Disable Windows update
+Stop-Service -displayname "Windows Update"
 
 Set-LabArtifacts
 Disable-UserAccessControl
