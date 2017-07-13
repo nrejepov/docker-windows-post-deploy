@@ -1,6 +1,7 @@
 function Set-LabArtifacts {
     # Use the temporary drive D: which is an SSD for A1 V2 instances
     Remove-Item D:\* -Confirm:$false -Force -Recurse -ErrorAction SilentlyContinue
+    $ProgressPreference = 'SilentlyContinue' # Ignore progress updates (100X speedup)
     Invoke-WebRequest -Uri "https://github.com/cloudacademy/docker-windows-post-deploy/archive/master.zip" -OutFile D:\master.zip
     Expand-Archive -Path D:\master.zip -DestinationPath D:\
     Move-Item D:\*-master\* D:\
