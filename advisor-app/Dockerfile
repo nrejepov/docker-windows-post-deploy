@@ -1,10 +1,7 @@
 # Python v3 base layer
 
 # Official python3 image for Windows Server Core
-#FROM python:3-windowsservercore
-
-# Community-provided Nano Server image 
-FROM stefanscherer/python-windows:3.6.1-nano  
+FROM python:3-windowsservercore
 
 # Set the working directory in the image's file system
 WORKDIR /usr/src/app
